@@ -1,0 +1,5 @@
+name: 'Kayobe run'
+description: 'Runs Kayobe related commands'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
