@@ -4,11 +4,18 @@ inputs:
   script:
     description: 'Kayobe automation script to run'
     required: true
+  kayobe-vault-password:
+    description: 'Kayobe Ansible Vault's password'
+    required: true
+  kayobe-automation-ssh-key:
+    description: 'Kayobe automation SSH key'
+    required: true
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.script }}
   env:
-    KAYOBE_VAULT_PASSWORD: ${{ secrets.KAYOBE_VAULT_PASSWORD }}
-    KAYOBE_AUTOMATION_SSH_KEY: ${{ secrets.KAYOBE_AUTOMATION_SSH_KEY }}
+    KAYOBE_VAULT_PASSWORD: ${{ inputs.kayobe-vault-password }}
+    KAYOBE_AUTOMATION_SSH_KEY: ${{ inputs.kayobe-automation-ssh-key }}
