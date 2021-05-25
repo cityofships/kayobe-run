@@ -1,5 +1,10 @@
 name: 'Kayobe run'
 description: 'Runs Kayobe related commands'
+inputs:
+  script:
+    description: 'Kayobe automation script to run'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  entrypoint: ${{ github.action_path }}/${{ inputs.script }}
