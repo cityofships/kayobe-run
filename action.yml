@@ -7,4 +7,4 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  entrypoint: ${{ github.action_path }}/${{ inputs.script }}
+  entrypoint: ${{ inputs.script }}
