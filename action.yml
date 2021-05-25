@@ -9,3 +9,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.script }}
+  env:
+    KAYOBE_VAULT_PASSWORD: ${{ secrets.KAYOBE_VAULT_PASSWORD }}
+    KAYOBE_AUTOMATION_SSH_KEY: ${{ secrets.KAYOBE_AUTOMATION_SSH_KEY }}
