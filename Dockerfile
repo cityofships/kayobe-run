@@ -30,7 +30,6 @@ RUN groupadd -g $KAYOBE_USER_GID -o stack &&  \
     -o -s /bin/bash stack
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-WORKDIR /stack
 USER stack
 
 RUN mkdir /stack/.ssh && chmod 700 /stack/.ssh && mkdir /github && chmod 700 /github
