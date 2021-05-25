@@ -27,12 +27,14 @@ ARG KAYOBE_USER_GID=1000
 RUN groupadd -g $KAYOBE_USER_GID -o stack &&  \
     useradd -u $KAYOBE_USER_UID -g $KAYOBE_USER_GID \
     -G wheel -m -d /stack \
-    -o -s /bin/bash stack
+    -o -s /bin/bash stack && \
+    mkdir /github && chmod 700 /github && chown stack:stack /github
+
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER stack
 
-RUN mkdir /stack/.ssh && chmod 700 /stack/.ssh && mkdir /github && chmod 700 /github
+RUN mkdir /stack/.ssh && chmod 700 /stack/.ssh
 COPY --chown=stack:stack ssh_config /stack/.ssh/config
 RUN chmod 600 /stack/.ssh/config
 
