@@ -5,7 +5,7 @@ inputs:
     description: 'Kayobe automation script to run'
     required: true
   kayobe-vault-password:
-    description: 'Kayobe Ansible Vault's password'
+    description: 'Kayobe Ansible Vault password'
     required: true
   kayobe-automation-ssh-key:
     description: 'Kayobe automation SSH key'
