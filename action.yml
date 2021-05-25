@@ -7,5 +7,5 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: ${{ github.action_path }}/${{ inputs.script }}
+    - run: ${{ github.workspace }}/${{ inputs.script }}
       shell: bash
