@@ -5,7 +5,7 @@ inputs:
     description: 'Kayobe automation script to run'
     required: true
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.script }}
+  using: composite
+  steps:
+    - run: ${{ github.action_path }}/${{ inputs.script }}
+      shell: bash
