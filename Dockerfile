@@ -36,3 +36,6 @@ USER stack
 RUN mkdir /stack/.ssh && chmod 700 /stack/.ssh
 COPY --chown=stack:stack ssh_config /stack/.ssh/config
 RUN chmod 600 /stack/.ssh/config
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
