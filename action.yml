@@ -19,3 +19,5 @@ runs:
   env:
     KAYOBE_VAULT_PASSWORD: ${{ inputs.kayobe-vault-password }}
     KAYOBE_AUTOMATION_SSH_KEY: ${{ inputs.kayobe-automation-ssh-key }}
+    KAYOBE_CONFIG_PATH: /github/workspace/etc/kayobe
+    HOME: /stack
