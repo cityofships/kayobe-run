@@ -7,7 +7,7 @@ inputs:
   kayobe-vault-password:
     description: 'Kayobe Ansible Vault password'
     required: true
-  kayobe-automation-ssh-key:
+  kayobe-automation-ssh-private-key:
     description: 'Kayobe automation SSH key'
     required: true
 
@@ -18,4 +18,4 @@ runs:
     - ${{ inputs.script }}
   env:
     KAYOBE_VAULT_PASSWORD: ${{ inputs.kayobe-vault-password }}
-    KAYOBE_AUTOMATION_SSH_KEY: ${{ inputs.kayobe-automation-ssh-key }}
+    KAYOBE_AUTOMATION_SSH_PRIVATE_KEY: ${{ inputs.kayobe-automation-ssh-private-key }}
