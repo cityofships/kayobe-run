@@ -28,7 +28,8 @@ RUN groupadd -g $KAYOBE_USER_GID -o stack &&  \
     useradd -u $KAYOBE_USER_UID -g $KAYOBE_USER_GID \
     -G wheel -m -d /stack \
     -o -s /bin/bash stack && \
-    mkdir /github && chmod 700 /github && chown stack:stack /github
+    mkdir -p /github/home /github/workflow /github/workspace /github/file_commands && \
+    chmod -R 700 /github && chown -R stack:stack /github
 
 RUN echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
